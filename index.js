@@ -23,8 +23,8 @@ if(!fs.existsSync(uploadDir)){
 app.use("/videos", express.static(uploadDir))
 
 // MongoDB connect (default URI from .env)
-if(process.env.MONGO_URI){
-    mongoose.connect(process.env.MONGO_URI)
+if("mongodb+srv://MyDatabase:Cp8rNCfi15IUC6uc@cluster0.kjbloky.mongodb.net/videoHostRender2"){
+    mongoose.connect("mongodb+srv://MyDatabase:Cp8rNCfi15IUC6uc@cluster0.kjbloky.mongodb.net/videoHostRender2")
     .then(()=>console.log("MongoDB Connected"))
     .catch(err=>console.log(err))
 }
@@ -184,6 +184,6 @@ app.post("/upload-url", async (req, res) => {
 })
 
 // Server start
-app.listen(process.env.PORT,()=>{
+app.listen(3000,()=>{
     console.log("Server Running")
 })
